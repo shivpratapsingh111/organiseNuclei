@@ -16,7 +16,7 @@ This script moves unwanted nuclei templates to a different directory, so they do
     python3 organiseTemplates.py --help
     ```
 
-- `No flag provided`: Works on default values (directory: /home/$user/nuclei-templates, file: Default array in script)
+- `None`: Works on default values (directory: /home/$user/nuclei-templates, file: Default array in script)
 
     ```
     python3 organiseTemplates.py

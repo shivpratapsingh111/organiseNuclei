@@ -2,11 +2,11 @@ This script moves unwanted nuclei templates to a different directory, so they do
 ---
 ### Exclude Nuclei Templates based on IDs
  
-- organiseNuclei.py - Moves unwanted nuclei templates to a separate directory
+- organiseNuclei.py - Main script
 
 - id.txt - contains IDs to exclude (You can add more IDs to exclude)
 
-- Output (excluded templates) will be saved in **.separated/** directory. (Hidden in linux)
+- .separated/ - Output directory. (Hidden in linux)
 
 ### Usage:
 
@@ -16,25 +16,25 @@ This script moves unwanted nuclei templates to a different directory, so they do
     python3 organiseTemplates.py --help
     ```
 
-- `No flag provided`: It will check for nuclei-template folder in home path
+- `No flag provided`: Works on default values (directory: /home/$user/nuclei-templates, file: Default array in script)
 
     ```
     python3 organiseTemplates.py
     ```
 
-- ` -dir -f id.txt`: It will move all Nuclei Templates with id that matches in id.txt
+- ` -dir -f id.txt`: Provide custom file to match IDs from
 
     ```
     python3 organiseTemplates.py -dir /home/nuclei-templates -i id.txt
     ```
 
-- `-dir /home/nuclei-templates/`: It will move all templates with IDs set by default in the script to output folder
+- `-dir /home/nuclei-templates/`: Provide custom path for nuclei templates
 
     ```
     python3 organiseTemplates.py -dir /home/nuclei-templates
     ```
 
-- `rev`: It will move back all the template files to their orgin path. 
+- `-rev`: It will move back all the template files to their orgin path. 
     
     ```
     python3 organiseTemplates.py -rev

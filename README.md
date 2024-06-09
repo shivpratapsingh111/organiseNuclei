@@ -22,16 +22,22 @@ This script moves unwanted nuclei templates to a different directory, so they do
     python3 organiseTemplates.py
     ```
 
-- ` -dir -f id.txt`: Provide custom file to match IDs from
+- ` -dir -f id.txt`: Provide custom file path to match IDs from
 
     ```
-    python3 organiseTemplates.py -dir /home/nuclei-templates -i id.txt
+    python3 organiseTemplates.py -i id.txt
     ```
 
 - `-dir /home/nuclei-templates/`: Provide custom path for nuclei templates
 
     ```
     python3 organiseTemplates.py -dir /home/nuclei-templates
+    ```
+
+- `-dir /home/nuclei-templates/ -i id.txt`: Provide custom paths for both, nuclei templates and file to match IDs from
+
+    ```
+    python3 organiseTemplates.py -dir /home/nuclei-templates -i id.txt
     ```
 
 - `-rev`: It will move back all the template files to their orgin path. 

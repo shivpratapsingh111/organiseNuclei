@@ -122,8 +122,11 @@ def main():
 
 # -i
     elif args.i and not args.dir and not args.rev:
-        print("[+] Incorrect use of flags!")             
-        sys.exit(1)
+        defaultDirectory = f"/home/{os.getlogin()}/nuclei-templates"
+        if not os.path.exists(defaultDirectory):
+            print(f"---\n[+] nuclei-templates folder not found in home: {defaultDirectory}\n[+] Please provide template folder path with `-dir` flag\n[+] Example: python3 {sys.argv[0]} -dir resources/nuclei-templates -i {args.i}\n---")
+        else: 
+            excludeTemplates(defaultDirectory, defaultIds, outputFolder)
 
     else: 
         print("[+] Incorrect use of flags!")

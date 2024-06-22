@@ -14,8 +14,8 @@ configFile= os.path.join(os.path.join(os.getcwd(), outputFolder), ".config")
 
 def usage():
     print("Examples:")
-    print(f"\n[+] Provide file with `-i` flag containing `id` to exclude, one per line: \n\t- {sys.argv[0]} -dir /home/nuclei-templates -i ids.txt")
-    print(f"\n[+] If you don't provide a file, It will exclude templates set by default:\n\t- {sys.argv[0]} -dir /home/nuclei-templates\n")
+    print(f"\n[+] Provide file with `-i` flag containing `id` to exclude, one per line: \n\t- {sys.argv[0]} -dir ~/nuclei-templates -i ids.txt")
+    print(f"\n[+] If you don't provide a file, It will exclude templates set by default:\n\t- {sys.argv[0]} -dir ~/nuclei-templates\n")
 
 
 
@@ -84,9 +84,9 @@ def reverseAction():
 def main():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description='Separate Nuclei Templates files based on ID match.', epilog=textwrap.dedent(f"""Examples:
 [+] Provide file with `-i` flag containing `id` to exclude, one per line: 
-\t- {sys.argv[0]} -dir /home/nuclei-templates -i ids.txt
+\t- {sys.argv[0]} -dir ~/nuclei-templates -i ids.txt
 [+] If you don't provide a file, It will exclude templates set by default:
-\t- {sys.argv[0]} -dir /home/nuclei-templates
+\t- {sys.argv[0]} -dir ~/nuclei-templates
 [+] To move back all the templates back to their origin:
 \t- {sys.argv[0]} -rev"""))
     
@@ -110,9 +110,9 @@ def main():
 
 # None
     elif args.i==None and args.dir==None and args.rev==False:
-        defaultDirectory = f"/home/{os.getlogin()}/nuclei-templates"
+        defaultDirectory = f"~/{os.getlogin()}/nuclei-templates"
         if not os.path.exists(defaultDirectory):
-            print(f"---\n[+] nuclei-templates folder not found in home: {defaultDirectory}\n[+] Please provide template folder path with `-dir` flag\n[+] Example: python3 {sys.argv[0]} -dir resources/nuclei-templates\n---")
+            print(f"---\n[+] nuclei-templates folder not found in ~: {defaultDirectory}\n[+] Please provide template folder path with `-dir` flag\n[+] Example: python3 {sys.argv[0]} -dir resources/nuclei-templates\n---")
         else: 
             excludeTemplates(defaultDirectory, defaultIds, outputFolder)
 
@@ -122,9 +122,9 @@ def main():
 
 # -i
     elif args.i and not args.dir and not args.rev:
-        defaultDirectory = f"/home/{os.getlogin()}/nuclei-templates"
+        defaultDirectory = f"~/{os.getlogin()}/nuclei-templates"
         if not os.path.exists(defaultDirectory):
-            print(f"---\n[+] nuclei-templates folder not found in home: {defaultDirectory}\n[+] Please provide template folder path with `-dir` flag\n[+] Example: python3 {sys.argv[0]} -dir resources/nuclei-templates -i {args.i}\n---")
+            print(f"---\n[+] nuclei-templates folder not found in ~: {defaultDirectory}\n[+] Please provide template folder path with `-dir` flag\n[+] Example: python3 {sys.argv[0]} -dir resources/nuclei-templates -i {args.i}\n---")
         else: 
             excludeTemplates(defaultDirectory, defaultIds, outputFolder)
 

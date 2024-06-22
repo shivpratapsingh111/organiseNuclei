@@ -8,6 +8,14 @@ This script moves unwanted nuclei templates to a different directory, so they do
 
 - .separated/ - Output directory. (Hidden in linux)
 
+### Installation
+
+- Paste the below command in terminal
+    ```
+    git clone https://github.com/shivpratapsingh111/organiseNuclei.git && cd organiseNuclei && pip3 install -r requirements.txt
+    ```
+
+
 ### Usage:
 
 - `--help`: List available options

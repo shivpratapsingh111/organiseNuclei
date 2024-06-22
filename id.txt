@@ -1,3 +1,10 @@
+ptr-fingerprint
+basic-auth-detect
+dns-rebinding
+microsoft-azure-error
+microsoft-sharepoint-detect
+servfail-refused-hosts
+tableau-server-detect
 http-missing-security-headers
 tech-detect
 missing-csp

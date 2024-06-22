@@ -112,7 +112,7 @@ def main():
     elif args.i==None and args.dir==None and args.rev==False:
         defaultDirectory = f"~/{os.getlogin()}/nuclei-templates"
         if not os.path.exists(defaultDirectory):
-            print(f"---\n[+] nuclei-templates folder not found in ~: {defaultDirectory}\n[+] Please provide template folder path with `-dir` flag\n[+] Example: python3 {sys.argv[0]} -dir resources/nuclei-templates\n---")
+            print(f"---\n[+] nuclei-templates folder not found in: {defaultDirectory}\n[+] Please provide template folder path with `-dir` flag\n[+] Example: python3 {sys.argv[0]} -dir resources/nuclei-templates\n---")
         else: 
             excludeTemplates(defaultDirectory, defaultIds, outputFolder)
 
